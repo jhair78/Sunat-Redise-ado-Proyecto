@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trámites - SUNAT</title>
+  
+  <!-- Tailwind CSS CDN para estilos rápidos -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome para íconos -->
+  <script src="https://kit.fontawesome.com/a2d69d6c57.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
+<!-- bg-gray-50 → fondo gris claro, text-gray-900 → color texto principal, font-sans → fuente sans-serif, flex flex-col min-h-screen → layout vertical que ocupa toda la pantalla -->
+
+<!-- ================= HEADER ================= -->
+<header class="bg-blue-900 text-white sticky top-0 z-50 shadow-md">
+  <!-- bg-blue-900 → fondo azul oscuro, text-white → texto blanco, sticky top-0 → se mantiene visible al hacer scroll, z-50 → prioridad sobre otros elementos, shadow-md → sombra -->
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- max-w-7xl → ancho máximo del contenido, mx-auto → centrado horizontal, px-4 py-4 → padding, flex justify-between → espacio entre logo y navegación -->
+
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="img/Logo.png" class="h-10 w-10 object-contain bg-white/10 p-1 rounded" alt="Logo SUNAT">
+      <span class="font-semibold text-lg tracking-tight">SUNAT</span>
+    </a>
+
+    <!-- NAVEGACIÓN DESKTOP -->
+    <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+      <a href="index.html" class="hover:text-yellow-300 transition">Inicio</a>
+      <a href="tramites.html" class="text-yellow-300 border-b-2 border-yellow-300 pb-0.5">Trámites</a>
+      <a href="servicios.html" class="hover:text-yellow-300 transition">Servicios</a>
+      <a href="contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+
+      <!-- Botón especial Clave SOL -->
+      <a href="contacto.html" class="ml-4 bg-yellow-400 text-blue-900 px-4 py-2 rounded shadow hover:bg-yellow-300 transition pulse-accent font-bold">
+        <i class="fa-solid fa-key mr-1"></i> Clave SOL
+      </a>
+    </nav>
+
+      <!-- BOTÓN HAMBURGUESA MOBILE CORRECTO -->
+      <div id="menuBtn" class="md:hidden flex flex-col gap-1.5 cursor-pointer select-none">
+       <span class="burger-line"></span>
+       <span class="burger-line"></span>
+       <span class="burger-line"></span>
+      </div>
+
+  </div>
+
+  <!-- MENÚ MOBILE -->
+  <div id="mobileMenu" class="hidden md:hidden bg-blue-800 border-t border-blue-700">
+    <div class="px-4 py-3 space-y-2">
+      <!-- Links del menú mobile -->
+      <a href="index.html" class="block py-2 px-3 hover:bg-blue-700 rounded text-white">Inicio</a>
+      <a href="tramites.html" class="block py-2 px-3 bg-blue-900/50 text-yellow-300 rounded font-semibold">Trámites</a>
+      <a href="servicios.html" class="block py-2 px-3 hover:bg-blue-700 rounded text-white">Servicios</a>
+      <a href="contacto.html" class="block py-2 px-3 hover:bg-blue-700 rounded text-white">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<!-- =============== HERO ================== -->
+<section class="relative w-full h-[55vh] flex items-center justify-center overflow-hidden">
+  <!-- Hero con imagen de fondo y overlay oscuro -->
+  <img src="img/hero 2.webp" class="absolute inset-0 w-full h-full object-cover" alt="Trámites SUNAT">
+  <div class="absolute inset-0 bg-black/50"></div> <!-- overlay semitransparente -->
+
+  <!-- Texto central -->
+  <div class="relative text-center text-white px-6 max-w-2xl card-anim fade-up">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3">Galería de Trámites</h1>
+    <p class="text-blue-100 text-lg">Encuentra fácilmente el trámite que necesitas realizar hoy.</p>
+  </div>
+</section>
+
+<!-- =============== BUSCADOR ================== -->
+<section class="w-full px-6 mt-10 flex justify-center">
+  <div class="w-full max-w-4xl relative">
+    <!-- Input de búsqueda -->
+    <input type="text" placeholder="Buscar trámite… Ej: RUC, Declaración, Pagos"
+      class="w-full pl-16 pr-6 py-4 rounded-full text-gray-900 shadow-xl text-xl focus:ring-4 focus:ring-yellow-400/50 outline-none transition duration-300">
+    <!-- Ícono lupa dentro del input -->
+    <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 text-xl"></i>
+  </div>
+</section>
+
+<!-- =============== CARDS GRANDES ================== -->
+<main class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  <!-- grid → diseño de 1 columna en móviles, 2 en tablet, 3 en desktop -->
+
+  <!-- CARD 1: Inscripción al RUC -->
+  <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-big card-anim card-img-zoom fade-up">
+    <img src="img/Ruc 2.jpg" class="h-48 w-full object-cover" alt="RUC">
+    <div class="p-6">
+      <h3 class="font-bold text-xl text-gray-800">Inscripción al RUC</h3>
+      <p class="text-gray-600 text-sm mt-2">Obtén tu número de RUC de forma digital para iniciar tus actividades económicas.</p>
+      <a href="#" class="text-blue-700 font-semibold hover:underline mt-3 inline-block">Iniciar trámite →</a>
+    </div>
+  </article>
+
+  <!-- CARD 2: Recibo por Honorarios -->
+  <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-big card-anim card-img-zoom fade-up" style="transition-delay:0.1s">
+    <img src="img/recibos.jpg" class="h-48 w-full object-cover" alt="Recibo por Honorarios">
+    <div class="p-6">
+      <h3 class="font-bold text-xl text-gray-800">Emitir Recibo por Honorarios</h3>
+      <p class="text-gray-600 text-sm mt-2">Genera tus comprobantes electrónicos en minutos.</p>
+      <a href="#" class="text-blue-700 font-semibold hover:underline mt-3 inline-block">Ir al sistema →</a>
+    </div>
+  </article>
+
+  <!-- CARD 3: Pago de Impuestos -->
+  <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-big card-anim card-img-zoom fade-up" style="transition-delay:0.2s">
+    <img src="img/pagos impuestos.jpg" class="h-48 w-full object-cover" alt="Pagos SUNAT">
+    <div class="p-6">
+      <h3 class="font-bold text-xl text-gray-800">Pago de Impuestos</h3>
+      <p class="text-gray-600 text-sm mt-2">Realiza pagos de manera rápida mediante tarjetas o tu banco.</p>
+      <a href="#" class="text-blue-700 font-semibold hover:underline mt-3 inline-block">Pagar ahora →</a>
+    </div>
+  </article>
+
+  <!-- CARD 4: Recuperar Clave SOL -->
+  <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-big card-anim card-img-zoom fade-up" style="transition-delay:0.3s">
+    <img src="img/clave sol.jpg" class="h-48 w-full object-cover" alt="Clave SOL">
+    <div class="p-6">
+      <h3 class="font-bold text-xl text-gray-800">Recuperar Clave SOL</h3>
+      <p class="text-gray-600 text-sm mt-2">Recupera tu acceso completando tu validación de identidad.</p>
+      <a href="#" class="text-blue-700 font-semibold hover:underline mt-3 inline-block">Recuperar →</a>
+    </div>
+  </article>
+
+  <!-- CARD 5: Denuncias -->
+  <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-big card-anim card-img-zoom fade-up" style="transition-delay:0.4s">
+    <img src="img/Denuncias.jpg" class="h-48 w-full object-cover" alt="Denuncias">
+    <div class="p-6">
+      <h3 class="font-bold text-xl text-gray-800">Denuncias</h3>
+      <p class="text-gray-600 text-sm mt-2">Reporta evasión o irregularidades tributarias.</p>
+      <a href="#" class="text-blue-700 font-semibold hover:underline mt-3 inline-block">Denunciar →</a>
+    </div>
+  </article>
+
+  <!-- CARD 6: Todos los trámites -->
+  <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-big card-anim card-img-zoom fade-up" style="transition-delay:0.5s">
+    <img src="img/tramites.webp" class="h-48 w-full object-cover" alt="Todos los trámites">
+    <div class="p-6">
+      <h3 class="font-bold text-xl text-gray-800">Ver todos los trámites</h3>
+      <p class="text-gray-600 text-sm mt-2">Accede al catálogo completo TUPA de procedimientos.</p>
+      <a href="#" class="text-blue-700 font-semibold hover:underline mt-3 inline-block">Ver catálogo →</a>
+    </div>
+  </article>
+
+</main>
+
+<!-- =============== FOOTER ================== -->
+<footer class="bg-blue-900 text-white py-8 mt-auto">
+  <!-- mt-auto → empuja el footer al final de la página -->
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <p class="text-blue-200 text-sm">© 2024 Proyecto de Rediseño Académico.</p>
+  </div>
+</footer>
+
+<!-- Script principal (menu mobile, animaciones si existen) -->
+<script src="js/main.js"></script>
+
+<!-- MÉTODO BURGER -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");   // Animación
+    mobileMenu.classList.toggle("hidden"); // Muestra/oculta menú
+  });
+</script>
+
+</body>
+</html>

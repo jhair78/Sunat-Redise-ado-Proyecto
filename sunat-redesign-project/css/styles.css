@@ -1,0 +1,288 @@
+/* =========================================================
+   VARIABLES BASE (SUNAT)
+========================================================= */
+:root {
+  --sunat-blue: #0B3B6F;        /* Azul institucional SUNAT */
+  --sunat-blue-dark: #072B52;   /* Azul oscuro secundario */
+  --accent: #F4D35E;            /* Color amarillo/acento */
+  --muted: #6B7280;             /* Gris para textos secundarios */
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;          /* Evita scroll horizontal */
+  background-color: #f8fafc;   /* Fondo general */
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero-bg {
+  background-image: url('../img/Hero.png'); /* Imagen de fondo hero */
+  background-size: cover;                   /* Cubrir toda la sección */
+  background-position: center;              /* Centrado */
+  position: relative;
+  padding: 5rem 1rem;                       /* Espaciado interno */
+}
+
+/* Overlay oscuro semi-transparente */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 31, 63, 0.55);
+  backdrop-filter: brightness(0.9);
+  z-index: 0;
+}
+
+/* Contenido del hero por encima del overlay */
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================================
+   ANIMACIONES INSTITUCIONALES
+========================================================= */
+/* Estado inicial oculto */
+.js-reveal {
+  opacity: 0;
+  transition: all 0.9s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Diferentes direcciones de fade + slide */
+.fade-up { transform: translateY(30px); }
+.fade-left { transform: translateX(-35px); }
+.fade-right { transform: translateX(35px); }
+.fade-down { transform: translateY(-30px); }
+.zoom-in { transform: scale(0.92); }
+
+/* Cuando se activa la animación */
+.reveal-active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* =========================================================
+   TARJETAS PROFESIONALES (CARDS)
+========================================================= */
+/* Hover básico: eleva tarjeta */
+.card-hover {
+  transition: all 0.28s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+/* Accesibilidad: enfoque de botones y enlaces */
+button:focus, a:focus {
+  outline: 3px solid rgba(255,255,255,0.4);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   ANIMACIÓN DE TARJETAS
+========================================================= */
+/* Estado inicial: fuera de pantalla y transparente */
+.card-anim {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+/* Cuando aparece en pantalla */
+.card-anim.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover: eleva más la tarjeta */
+.card-hover-big {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-hover-big:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+}
+
+/* Hover: zoom a la imagen de la tarjeta */
+.card-img-zoom img {
+  transition: transform 0.5s ease;
+}
+.card-img-zoom:hover img {
+  transform: scale(1.1);
+}
+
+
+/* ---------------------- */
+/* Estilos del Menú Burger */
+/* ---------------------- */
+
+.menu-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff; /* Color blanco como el logo SUNAT */
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+/* Animación cuando el menú está abierto */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+/* Menú oculto (lo conectaremos con tu navegador) */
+.nav-menu {
+  display: none;
+}
+
+.nav-menu.active {
+  display: block;
+}
+
+/* ===========================================
+   MENÚ HAMBURGUESA (3 LÍNEAS)
+=========================================== */
+
+.burger-line {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* Animación cuando el menú está abierto */
+#menuBtn.active .burger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#menuBtn.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active .burger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ---------------------------------------
+   LÍNEAS DEL MENÚ HAMBURGUESA (3 líneas)
+-----------------------------------------*/
+.burger-line {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* Animación a "X" */
+#menuBtn.active .burger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#menuBtn.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active .burger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ===========================================================
+   ESTILOS DEL MENÚ HAMBURGUESA
+=========================================================== */
+
+.burger-line {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 4px;
+  transition: .3s ease;
+}
+
+/* Animación al convertir en "X" */
+#menuBtn.active .burger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+#menuBtn.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+#menuBtn.active .burger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* === BURGER LINES === */
+.burger-line {
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+
+/* === ANIMACIÓN cuando está activo === */
+#menuBtn.active .burger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+#menuBtn.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active .burger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* === BURGER LINES === */
+.burger-line {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+
+/* === ANIMACIÓN X === */
+#menuBtn.active .burger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#menuBtn.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active .burger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SUNAT - Inicio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome para íconos -->
+  <script src="https://kit.fontawesome.com/a2d69d6c57.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+<!-- bg-gray-50 → fondo gris claro, text-gray-900 → color del texto -->
+<!-- =========================================================
+     HEADER COMPLETO
+========================================================= -->
+<header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center gap-3 group">
+      <img src="img/Logo.png" class="h-10 w-10 p-1 bg-white/10 rounded" alt="SUNAT Logo">
+      <span class="font-semibold text-lg">SUNAT</span>
+    </a>
+
+    <!-- NAVEGACIÓN DESKTOP -->
+    <nav class="hidden md:flex gap-6 items-center">
+      <a href="index.html" class="text-yellow-300">Inicio</a>
+      <a href="tramites.html" class="hover:text-yellow-300">Trámites</a>
+      <a href="servicios.html" class="hover:text-yellow-300">Servicios</a>
+      <a href="contacto.html" class="hover:text-yellow-300">Contacto</a>
+
+      <!-- Botón Clave SOL -->
+      <a href="contacto.html" class="ml-4 px-4 py-2 bg-yellow-400 text-blue-900 rounded font-bold hover:bg-yellow-300">
+        <i class="fa-solid fa-key mr-1"></i> Clave SOL
+      </a>
+    </nav>
+
+    <!-- MENÚ HAMBURGUESA (MOBILE) -->
+    <div id="menuBtn" class="md:hidden flex flex-col gap-1.5 cursor-pointer select-none">
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+    </div>
+
+  </div>
+
+  <!-- MENÚ MOBILE -->
+  <div id="mobileMenu" class="hidden md:hidden bg-blue-800 border-t border-blue-700 px-4 py-4 space-y-3">
+    <a href="index.html" class="block text-yellow-300 font-semibold">Inicio</a>
+    <a href="tramites.html" class="block text-white">Trámites</a>
+    <a href="servicios.html" class="block text-white">Servicios</a>
+    <a href="contacto.html" class="block text-white">Contacto</a>
+
+    <!-- Clave SOL en móvil -->
+    <a href="contacto.html" class="block mt-2 px-4 py-2 bg-yellow-400 text-blue-900 rounded font-bold hover:bg-yellow-300">
+      <i class="fa-solid fa-key mr-1"></i> Clave SOL
+    </a>
+  </div>
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="hero-bg text-white py-28">
+  <!-- hero-bg → imagen de fondo o gradiente, py-28 → padding vertical -->
+
+  <div class="hero-content max-w-4xl mx-auto text-center zoom-in js-reveal">
+    <!-- Contenedor centrado con animación -->
+
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      Trámites y Servicios <br>
+      <span class="text-yellow-400">más simples</span>
+    </h1>
+
+    <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto fade-up js-reveal">
+      Realiza tus consultas RUC, declaraciones y pagos desde un único lugar moderno y seguro.
+    </p>
+
+    <!-- BARRA DE BÚSQUEDA -->
+    <div class="bg-white rounded-full shadow-xl p-2 flex items-center fade-up js-reveal">
+      <input type="text" placeholder="¿Qué trámite buscas? (RUC, pagos, declaraciones...)"
+             class="flex-1 px-6 py-3 rounded-full text-gray-700 focus:outline-none">
+
+      <button class="bg-blue-800 hover:bg-blue-700 text-white px-6 py-3 rounded-full">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     LO MÁS SOLICITADO
+========================================================= -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <!-- Sección centrada con padding -->
+
+  <div class="flex justify-between items-end mb-10 fade-left js-reveal">
+    <div>
+      <h2 class="text-3xl font-bold">Lo más solicitado</h2>
+      <p class="text-gray-500 mt-2">Accesos directos a operaciones frecuentes.</p>
+    </div>
+  </div>
+
+  <!-- GRID DE TARJETAS -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- grid responsive: 1 columna móvil, 2 tablet, 4 desktop -->
+
+    <!-- CARD 1: Consulta RUC -->
+    <a class="bg-white p-6 rounded-xl shadow-sm border card-hover fade-up js-reveal">
+      <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+        <img src="img/icons/ruc.png" class="h-7 w-7" alt="Icono RUC">
+      </div>
+      <h3 class="font-bold">Consulta RUC</h3>
+      <p class="text-gray-500 text-sm mt-2">Revisa datos de contribuyentes.</p>
+    </a>
+
+    <!-- CARD 2: Clave SOL -->
+    <a class="bg-white p-6 rounded-xl shadow-sm border card-hover fade-up js-reveal" style="transition-delay:.1s">
+      <div class="h-12 w-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-4">
+        <img src="img/icons/clave-sol.png" class="h-7 w-7" alt="Icono Clave SOL">
+      </div>
+      <h3 class="font-bold">Clave SOL</h3>
+      <p class="text-gray-500 text-sm mt-2">Accede a tus operaciones.</p>
+    </a>
+
+    <!-- CARD 3: Declaraciones -->
+    <a class="bg-white p-6 rounded-xl shadow-sm border card-hover fade-up js-reveal" style="transition-delay:.2s">
+      <div class="h-12 w-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+        <img src="img/icons/declaraciones.png" class="h-7 w-7" alt="Icono Declaraciones">
+      </div>
+      <h3 class="font-bold">Declaraciones</h3>
+      <p class="text-gray-500 text-sm mt-2">Cumple tus obligaciones.</p>
+    </a>
+
+    <!-- CARD 4: Centro de Ayuda -->
+    <a class="bg-white p-6 rounded-xl shadow-sm border card-hover fade-up js-reveal" style="transition-delay:.3s">
+      <div class="h-12 w-12 bg-purple-50 text-purple-700 rounded-lg flex items-center justify-center text-xl mb-4">
+        <img src="img/icons/pagos.png" alt="Icono Pagos" class="h-12 w-12 mb-3">
+      </div>
+      <h3 class="font-bold">Centro de Ayuda</h3>
+      <p class="text-gray-500 text-sm mt-2">Soporte y orientación.</p>
+    </a>
+  </div>
+</section>
+
+<!-- =========================================================
+     NOTICIAS Y COMUNICADOS
+========================================================= -->
+<section class="bg-white py-16">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- Título centrado -->
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-blue-900 fade-down js-reveal">Noticias y comunicados</h2>
+      <p class="text-gray-600 mt-2 fade-up js-reveal" style="max-width:600px; margin:auto;">
+        Mantente informado sobre los comunicados más recientes de SUNAT.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- GRID de noticias -->
+
+      <!-- Noticia 1 -->
+      <article class="bg-white rounded-xl overflow-hidden shadow-md card-hover fade-up js-reveal" style="transition-delay:0s">
+        <div class="h-44 bg-gray-200">
+          <img src="img/cronogramas sunat.webp" alt="Cronograma de vencimientos 2024" class="w-full h-full object-cover">
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded">TRIBUTARIO</span>
+          <h3 class="font-bold mt-3 text-lg text-gray-800">Cronograma de vencimientos 2024</h3>
+          <p class="text-gray-600 text-sm mt-2">Fechas clave para presentar declaraciones mensuales y anualidades.</p>
+          <a href="#" class="inline-block mt-4 text-blue-700 font-semibold hover:underline">Leer más →</a>
+        </div>
+      </article>
+
+      <!-- Noticia 2 -->
+      <article class="bg-white rounded-xl overflow-hidden shadow-md card-hover fade-up js-reveal" style="transition-delay:.15s">
+        <div class="h-44 bg-gray-200">
+          <img src="img/app sunat.jpg" alt="Nueva App SUNAT Personas" class="w-full h-full object-cover">
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-bold text-green-600 bg-green-100 px-2 py-1 rounded">TECNOLOGÍA</span>
+          <h3 class="font-bold mt-3 text-lg text-gray-800">Nueva App SUNAT Personas</h3>
+          <p class="text-gray-600 text-sm mt-2">Versión móvil para emitir comprobantes y consultar obligaciones desde tu celular.</p>
+          <a href="#" class="inline-block mt-4 text-blue-700 font-semibold hover:underline">Descargar app →</a>
+        </div>
+      </article>
+
+      <!-- Noticia 3 -->
+      <article class="bg-white rounded-xl overflow-hidden shadow-md card-hover fade-up js-reveal" style="transition-delay:.30s">
+        <div class="h-44 bg-gray-200">
+          <img src="img/aduanas sunat.jpg" alt="Facilidades en aduanas" class="w-full h-full object-cover">
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-bold text-yellow-700 bg-yellow-100 px-2 py-1 rounded">ADUANAS</span>
+          <h3 class="font-bold mt-3 text-lg text-gray-800">Nuevas facilidades en aduanas</h3>
+          <p class="text-gray-600 text-sm mt-2">Actualizaciones en límites y procedimientos para importaciones de pequeña escala.</p>
+          <a href="#" class="inline-block mt-4 text-blue-700 font-semibold hover:underline">Más información →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="bg-blue-900 text-white py-10">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <!-- Footer dividido en columnas -->
+
+    <div class="col-span-2">
+      <h3 class="font-bold text-xl mb-3">SUNAT</h3>
+      <p class="text-blue-200 text-sm">Superintendencia Nacional de Aduanas y de Administración Tributaria.</p>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Enlaces</h4>
+      <ul class="space-y-1 text-blue-200 text-sm">
+        <li><a href="tramites.html" class="hover:text-white">Trámites</a></li>
+        <li><a href="servicios.html" class="hover:text-white">Servicios</a></li>
+        <li><a href="contacto.html" class="hover:text-white">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Contacto</h4>
+      <p class="text-sm text-blue-200"><i class="fa-solid fa-phone mr-2"></i> 0-801-12-100</p>
+      <p class="text-sm text-blue-200"><i class="fa-solid fa-envelope mr-2"></i> consultas@sunat.gob.pe</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");   // burger → X
+    mobileMenu.classList.toggle("hidden"); // abrir / cerrar menú
+  });
+</script>
+
+
+
+</body>
+</html>

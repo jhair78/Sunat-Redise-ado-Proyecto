@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servicios - SUNAT</title>
+
+  <!-- Tailwind CSS CDN para estilos rápidos -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Font Awesome para íconos -->
+  <script src="https://kit.fontawesome.com/a2d69d6c57.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+<!-- bg-gray-50 → fondo gris claro, text-gray-900 → color texto principal, flex flex-col min-h-screen → layout vertical ocupando toda la pantalla -->
+<!-- ================= HEADER ================= -->
+<header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+  <!-- Header fijo con sombra -->
+  
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- Contenedor principal del header -->
+
+    <!-- ========== LOGO ========== -->
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="h-10 w-10 bg-white/10 rounded flex items-center justify-center">
+        <img src="img/Logo.png" alt="Logo SUNAT" class="w-full h-full object-contain p-1">
+      </div>
+      <span class="font-semibold text-lg tracking-tight">SUNAT</span>
+    </a>
+
+    <!-- ========== NAVEGACIÓN DESKTOP ========== -->
+    <!-- Oculto en celular (md:hidden) -->
+    <nav class="hidden md:flex gap-6 items-center font-medium">
+      <a href="index.html" class="hover:text-yellow-300 transition">Inicio</a>
+      <a href="tramites.html" class="hover:text-yellow-300 transition">Trámites</a>
+      <a href="servicios.html" class="text-yellow-300 border-b-2 border-yellow-300 pb-0.5">Servicios</a>
+      <a href="contacto.html" class="hover:text-yellow-300 transition">Contacto</a>
+
+      <!-- Botón Clave SOL -->
+      <a href="contacto.html" class="ml-4 bg-yellow-400 text-blue-900 px-4 py-2 rounded shadow hover:bg-yellow-300 transition font-bold">
+        <i class="fa-solid fa-key mr-1"></i> Clave SOL
+      </a>
+    </nav>
+
+    <!-- ========== BOTÓN HAMBURGUESA MOBILE ========== -->
+    <!-- Visible SOLO en celular -->
+    <div id="menuBtn" class="md:hidden flex flex-col justify-between w-8 h-6 cursor-pointer">
+      <!-- Cada línea del icono hamburguesa -->
+      <span class="burger-line w-full h-1 bg-white rounded transition"></span>
+      <span class="burger-line w-full h-1 bg-white rounded transition"></span>
+      <span class="burger-line w-full h-1 bg-white rounded transition"></span>
+    </div>
+
+  </div>
+</header>
+
+<!-- ========== MENÚ MOBILE FUERA DEL HEADER (CORRECTO) ========== -->
+<!-- Antes estaba mal ubicado dentro del header y no funcionaba -->
+<div id="mobileMenu" class="hidden md:hidden bg-blue-800 border-t border-blue-700">
+  <div class="px-4 py-4 space-y-3">
+    <a href="index.html" class="block text-white">Inicio</a>
+    <a href="tramites.html" class="block text-white">Trámites</a>
+    <a href="servicios.html" class="block text-yellow-300 font-bold">Servicios</a>
+    <a href="contacto.html" class="block text-white">Contacto</a>
+  </div>
+</div>
+
+
+<!-- ================= HERO / SECCIÓN PRINCIPAL ================= -->
+<section class="bg-blue-800 py-12 px-4 text-center text-white rounded-b-[2rem] shadow-md mb-10 js-reveal fade-down">
+  <!-- rounded-b-[2rem] → bordes redondeados en la parte inferior, shadow-md → sombra, js-reveal fade-down → animación al aparecer -->
+
+  <h1 class="text-3xl font-bold mb-3">Catálogo de Servicios</h1>
+  <p class="text-blue-100 max-w-2xl mx-auto">Herramientas, capacitaciones y soporte técnico para facilitar tu cumplimiento tributario.</p>
+</section>
+
+<!-- ================= SECCIÓN DE CARDS ================= -->
+<main class="max-w-7xl mx-auto px-4 pb-20">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- grid → diseño responsivo, 1 columna móvil, 2 tablet, 3 desktop, gap-8 → espacio entre cards -->
+
+    <!-- CARD 1: Charlas y Capacitaciones -->
+    <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover text-center fade-up">
+      <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden">
+        <img src="img/icons/Charlas.png" class="w-12 h-12 object-contain" alt="">
+      </div>
+      <h3 class="text-xl font-bold text-gray-800">Charlas y Capacitaciones</h3>
+      <p class="text-gray-500 mt-3 text-sm">Inscríbete en nuestros cursos gratuitos presenciales y virtuales.</p>
+      <a href="#" class="block mt-6 text-blue-700 font-semibold hover:text-blue-900">Ver calendario →</a>
+    </article>
+
+    <!-- CARD 2: Normatividad -->
+    <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover text-center fade-up" style="transition-delay: 0.1s">
+      <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden">
+        <img src="img/icons/normatividad.png" class="w-12 h-12 object-contain" alt="">
+      </div>
+      <h3 class="text-xl font-bold text-gray-800">Normatividad</h3>
+      <p class="text-gray-500 mt-3 text-sm">Accede a la biblioteca legislativa, decretos y resoluciones vigentes.</p>
+      <a href="#" class="block mt-6 text-blue-700 font-semibold hover:text-blue-900">Buscar normas →</a>
+    </article>
+
+    <!-- CARD 3: Facturador SUNAT -->
+    <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover text-center fade-up" style="transition-delay: 0.2s">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden">
+        <img src="img/icons/facturado sunat.jpeg" class="w-12 h-12 object-contain" alt="">
+      </div>
+      <h3 class="text-xl font-bold text-gray-800">Facturador SUNAT</h3>
+      <p class="text-gray-500 mt-3 text-sm">Descarga el software gratuito para emisión de comprobantes electrónicos.</p>
+      <a href="#" class="block mt-6 text-blue-700 font-semibold hover:text-blue-900">Descargar →</a>
+    </article>
+
+    <!-- CARD 4: Chat Tributario -->
+    <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover text-center fade-up" style="transition-delay: 0.3s">
+      <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden">
+        <img src="img/icons/chat tributario.png" class="w-12 h-12 object-contain" alt="">
+      </div>
+      <h3 class="text-xl font-bold text-gray-800">Chat Tributario</h3>
+      <p class="text-gray-500 mt-3 text-sm">Conversa en tiempo real con un asesor especializado.</p>
+      <a href="#" class="block mt-6 text-blue-700 font-semibold hover:text-blue-900">Iniciar chat →</a>
+    </article>
+
+    <!-- CARD 5: Denuncias -->
+    <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover text-center fade-up" style="transition-delay: 0.4s">
+      <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden">
+        <img src="img/icons/Denuncias2.png" class="w-12 h-12 object-contain" alt="">
+      </div>
+      <h3 class="text-xl font-bold text-gray-800">Denuncias</h3>
+      <p class="text-gray-500 mt-3 text-sm">Plataforma anónima para reportar evasión o comprobantes no entregados.</p>
+      <a href="#" class="block mt-6 text-blue-700 font-semibold hover:text-blue-900">Hacer denuncia →</a>
+    </article>
+
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-blue-900 text-white py-6 border-t border-blue-800 mt-auto text-center">
+  <!-- mt-auto → empuja el footer al final de la página -->
+  <p class="text-sm text-blue-200">SUNAT 2024 - Todos los derechos reservados.</p>
+</footer>
+
+<!-- Script principal -->
+<script src="js/main.js"></script>
+
+<!-- MÉTODO BURGER -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+
+</body>
+</html>
